@@ -1,0 +1,16 @@
+import java.util.*;
+public class Sol{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine().toLowerCase();
+        int n=s.length();
+        for(int i=0;i<n;i++){
+            char m=s.charAt(i);
+            if(s.indexOf(m) == s.lastIndexOf(m)){
+                System.out.print(m);
+                return;
+            }
+        }
+        System.out.print("All the characters are repetitive");
+    }
+}
