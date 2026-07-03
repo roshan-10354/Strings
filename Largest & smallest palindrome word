@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String[] words=sc.nextLine().split(" ");
+        String largest = "";
+        String smallest = "";
+        for (String word:words) {
+            if (word.length()>1&&word.equals(new StringBuilder(word).reverse().toString())) {
+                if (largest.equals("") || word.length() > largest.length()) {
+                    largest=word;
+                }
+                if (smallest.equals("") || word.length() < smallest.length()) {
+                    smallest=word;
+                }
+            }
+        }
+        System.out.println(largest);
+        System.out.println(smallest);
+    }
+}
