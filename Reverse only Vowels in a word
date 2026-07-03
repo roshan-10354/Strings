@@ -1,0 +1,25 @@
+import java.util.*;
+public class Solution {
+    static boolean vowel(char ch) {
+        ch = Character.toLowerCase(ch);
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        char c[]=s.toCharArray();
+        int l=0,r=c.length-1;
+        while (l<r) {
+            while(l<r && !vowel(c[l]))
+                l++;
+            while (l<r && !vowel(c[r]))
+                r--;
+            char t = c[l];
+            c[l] = c[r];
+            c[r] = t;
+            l++;
+            r--;
+        }
+        System.out.println(new String(c));
+    }
+}
